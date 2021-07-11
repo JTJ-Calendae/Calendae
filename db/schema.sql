@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS calendae_db;
+CREATE DATABASE calendae_db;
