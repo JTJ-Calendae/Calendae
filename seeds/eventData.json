@@ -1,0 +1,15 @@
+[
+    {
+      "name": "Bowling",
+      "description": "BYOB",
+      "date": "2021-07-15",
+      "time": "20:00:00",
+      "streetnumber": "1234",
+      "streetname": "fun",
+      "unitapt": "",
+      "city": "Chicago",
+      "state": "Illinois",
+      "zipcode": "60606"
+    }
+]
+  

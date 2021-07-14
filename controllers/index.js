@@ -1,3 +1,5 @@
+/* 
+
 const router = require('express').Router();
 
 // this is to require the api file
@@ -10,4 +12,6 @@ const homeRoutes = require('./homeRoutes');
 router.use('/', homeRoutes);
 router.use('/api', apiRoutes);
 
-module.exports = router;
+module.exports = router; 
+
+*/
