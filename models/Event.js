@@ -33,15 +33,15 @@ Event.init(
                 key: 'id',
             },
         },
-        streetNumber: {
+        streetnumber: {
             type: DataTypes.INTEGER,
             allowNull: true,
             },
-        streetName: {
+        streetname: {
             type: DataTypes.STRING,
             allowNull: true,
             },        
-        unitApt: {
+        unitapt: {
             type: DataTypes.STRING,
             allowNull: true,
             },    
@@ -53,7 +53,7 @@ Event.init(
             type: DataTypes.STRING,
             allowNull: true,
             },     
-        zipCode: {
+        zipcode: {
             type: DataTypes.STRING,
             allowNull: true,
             },                                                                    

@@ -1,0 +1,24 @@
+[
+    {
+      "username": "jimmy1000",
+      "password": "Password2",
+      "email": "jimster@yahoo.com",
+      "firstname": "Jim",
+      "lastname": "Johnson"
+    },
+    {
+        "username": "raybanmr3",
+        "password": "littlelover",
+        "email": "iloveraybans232@gmail.com",
+        "firstname": "Patrick",
+        "lastname": "Star"    
+    },
+    {
+        "username": "babyitscold",
+        "password": "outside1",
+        "email": "whattimeisit100@aol.com",
+        "firstname": "Steven",
+        "lastname": "Urkle"    
+    }
+  ]
+  

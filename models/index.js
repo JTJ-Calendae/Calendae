@@ -1,6 +1,6 @@
 const Event = require('./Event');
 const User = require('./User');
-const Rsvp = require('/RSVP');
+const Rsvp = require('./RSVP');
 
 User.hasMany(Event, {
     foreignKey: 'user_id',
@@ -25,3 +25,5 @@ User.hasMany(Rsvp, {
 Event.hasMany(Rsvp, {
     foreignKey: 'event_id',
 });
+
+module.exports = { User, Event};

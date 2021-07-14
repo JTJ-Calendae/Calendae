@@ -1,10 +1,11 @@
 {
-  "name": "Calendae",
+  "name": "calendae",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "seed": "node seeds/seed.js",
     "start": "node server.js"
   },
   "repository": {
