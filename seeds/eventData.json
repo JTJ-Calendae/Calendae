@@ -10,6 +10,18 @@
       "city": "Chicago",
       "state": "Illinois",
       "zipcode": "60606"
+    },
+    {
+      "name": "Pic-a-nic",
+      "description": "BYOB",
+      "date": "2021-08-15T00:00:00.000Z",
+      "time": "22:00:00",
+      "streetnumber": "1234",
+      "streetname": "Googoogaga",
+      "unitapt": "",
+      "city": "Minooka",
+      "state": "Illinois",
+      "zipcode": "60447"
     }
 ]
   
