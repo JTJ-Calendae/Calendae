@@ -6,16 +6,17 @@ router.get('/', async (req, res) => {
   // make a promise with try/catch
   try {
     const eventsData = await Event.findAll({
-      attributes: ['name']
+      attributes: ['name', 'date', 'time', 'user_id']
     })
     // map sequelize data into plain json
-    const events = eventsData.map(async (event) => await event.get({ plain: true }));
-    req.session.save(() => {
-      res.render('home', {
-        events,
-        loggedIn: req.session.loggedIn
-      });
-    })
+    res.status(200).json(eventsData);
+    // const events = eventsData.map(async (event) => await event.get({ plain: true }));
+    // req.session.save(() => {
+    //   res.render('home', {
+    //     events,
+    //     loggedIn: req.session.loggedIn
+    //   });
+    // })
   } 
   catch (err) {
     console.log(err);
