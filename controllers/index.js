@@ -1,5 +1,3 @@
-/* 
-
 const router = require('express').Router();
 
 // this is to require the api file
@@ -10,8 +8,7 @@ const homeRoutes = require('./homeRoutes');
 
 // this is directing the URL to the filepath or for the REST services (GET or POST routes)
 router.use('/', homeRoutes);
+console.log(homeRoutes.stack);
 router.use('/api', apiRoutes);
 
-module.exports = router; 
-
-*/
+module.exports = router;

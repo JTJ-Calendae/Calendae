@@ -10,13 +10,6 @@ Event.hasMany(Rsvp, {
     foreignKey: 'event_id',
 });
 
-Rsvp.belongsTo(Event, {
-    foreignKey: 'event_id',
-});
-
-Rsvp.belongsTo(User, {
-    foreignKey: 'user_id',
-});
 
 User.hasMany(Rsvp, {
     foreignKey: 'user_id',
@@ -26,4 +19,11 @@ Event.hasMany(Rsvp, {
     foreignKey: 'event_id',
 });
 
-module.exports = { User, Event};
+Event.belongsTo(User)
+
+Rsvp.belongsTo(Event);
+
+Rsvp.belongsTo(User);
+
+
+module.exports = { User, Event, Rsvp};
