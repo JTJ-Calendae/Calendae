@@ -8,7 +8,6 @@ const homeRoutes = require('./homeRoutes');
 
 // this is directing the URL to the filepath or for the REST services (GET or POST routes)
 router.use('/', homeRoutes);
-console.log(homeRoutes.stack);
 router.use('/api', apiRoutes);
 
 module.exports = router;
