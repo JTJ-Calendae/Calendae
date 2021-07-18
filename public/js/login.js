@@ -1,3 +1,21 @@
+const signUpRadio = document.querySelector('#signupradio');
+const logInRadio = document.querySelector('#loginradio');
+const signUpSection = document.querySelector('.signupsection');
+const logInSection = document.querySelector('.loginsection');
+
+const init = () => {
+  signUpRadio.addEventListener('click', () => {
+    logInSection.style.display = 'none'
+    signUpSection.style.display = 'block'
+    })
+  
+  logInRadio.addEventListener('click', () => {
+    signUpSection.style.display = 'none'
+    logInSection.style.display = 'block'
+    })
+}
+
+
 const signupFormHandler = async (event) => {
     event.preventDefault();
 
@@ -20,9 +38,39 @@ const signupFormHandler = async (event) => {
         if (response.ok) {
             document.location.replace('/home');
         } else {
-            alert(response.statusText);
+            alert("Sign up unsuccessful.");
+            console.log(response.statusText)
         }
     }
 };
 
+
+const loginFormHandler = async (event) => {
+    event.preventDefault();
+
+const username = document.querySelector('#username-login').value.trim();
+const password = document.querySelector('#password-login').value.trim();
+
+
+if (username && password) {
+    const response = await fetch('/api/users/login', {
+      method: 'POST',
+      body: JSON.stringify({ username, password }),
+      headers: { 'Content-Type': 'application/json' },
+    });
+
+    if (response.ok) {
+      document.location.replace('/home');
+    } else {
+        alert("Login unsuccessful.");
+        console.log(response.statusText)    
+    }
+  }
+};
+
+
+
 document.querySelector('#submitsignup').addEventListener('click', signupFormHandler);
+document.querySelector('#submitlogin').addEventListener('click', loginFormHandler);
+
+init();
