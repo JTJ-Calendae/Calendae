@@ -15,6 +15,7 @@ router.get('/', async (req, res) => {
         events,
         loggedIn: req.session.loggedIn
       });
+      // res.render('home');
     })
     // res.status(200).json(eventsData);
     // return;
@@ -25,6 +26,10 @@ router.get('/', async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+router.get('/home', (req, res) => {
+  res.render('home');
+})
 
 router.post('/', async (req, res) => {
   try {
