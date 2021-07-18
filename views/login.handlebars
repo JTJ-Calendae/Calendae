@@ -2,16 +2,17 @@
 <div class="container"> A simple social media for planning events smarter</div>
 
 <div class="control">
-  <label class="radio" id="signinradio">
-    <input type="radio" name="foobar">
-    Sign In
+  <label class="radio">
+    <input type="radio" name="foobar" id="loginradio">
+    Log In
   </label>
-  <label class="radio" id="signupradio">
-    <input type="radio" name="foobar" checked>
+  <label class="radio">
+    <input type="radio" name="foobar" id="signupradio">
     Sign Up
   </label>
 </div>
 <div class="field">
+<div class="signupsection">
   <div class="control has-icons-left has-icons-right">
     <input class="input is-success" id = "firstname-signup" type="text" placeholder="First Name" value="">
     <span class="icon is-small is-left">
@@ -20,6 +21,8 @@
     <span class="icon is-small is-right">
       <i class="fas fa-check"></i>
     </span>
+      </div>
+
 
 <div class="field">
   <div class="control has-icons-left has-icons-right">
@@ -30,6 +33,9 @@
     <span class="icon is-small is-right">
       <i class="fas fa-check"></i>
     </span>
+      </div>
+</div>
+
 
 <div class="field">
   <div class="control has-icons-left has-icons-right">
@@ -40,6 +46,9 @@
     <span class="icon is-small is-right">
       <i class="fas fa-check"></i>
     </span>
+      </div>
+</div>
+
 
 <div class="field">
   <div class="control has-icons-left has-icons-right">
@@ -50,6 +59,8 @@
     <span class="icon is-small is-right">
       <i class="fas fa-check"></i>
     </span>
+  </div>
+</div>
 
 <div class="field">
   <div class="control has-icons-left has-icons-right">
@@ -60,6 +71,9 @@
     <span class="icon is-small is-right">
       <i class="fas fa-check"></i>
     </span>
+      </div>
+</div>
+
 <div class="field">
   <div class="control has-icons-left has-icons-right">
     <input class="input is-success" id = "confirmPassword-signup" type="text" placeholder="Confirm password" value="">
@@ -69,42 +83,50 @@
     <span class="icon is-small is-right">
       <i class="fas fa-check"></i>
     </span>
+    </div>
+</div>
+
 
 <div class="field is-grouped">
   <div class="control">
-    <button class="button is-link" type="submit" id="submitsignup">Submit</button>
+    <button class="button is-link" type="submit" id="submitsignup">Sign Up</button>
+  </div>
+</div>
+</div>
+
+<div class="loginsection">
+<div class="field">
+  <div class="control has-icons-left has-icons-right">
+    <input class="input is-success" type="text" placeholder="Username" value="" id="username-login">
+    <span class="icon is-small is-left">
+      <i class="fas fa-user"></i>
+    </span>
+    <span class="icon is-small is-right">
+      <i class="fas fa-check"></i>
+    </span>
   </div>
 </div>
 
 
-
 <div class="field">
   <div class="control has-icons-left has-icons-right">
-    <input class="input is-success" type="text" placeholder="Username" value="">
+    <input class="input is-success" type="text" placeholder="Password" value="" id="password-login">
     <span class="icon is-small is-left">
       <i class="fas fa-user"></i>
     </span>
     <span class="icon is-small is-right">
       <i class="fas fa-check"></i>
     </span>
-
-<div class="field">
-  <div class="control has-icons-left has-icons-right">
-    <input class="input is-success" type="text" placeholder="Password" value="">
-    <span class="icon is-small is-left">
-      <i class="fas fa-user"></i>
-    </span>
-    <span class="icon is-small is-right">
-      <i class="fas fa-check"></i>
-    </span>
+  </div>
+</div>
 
 
 <div class="field is-grouped">
   <div class="control" >
-    <button class="button is-link" type="submit" id="submitsignin">Submit</button>
+    <button class="button is-link" type="submit" id="submitlogin">Log In</button>
   </div>
 </div>
-
-
+</div>
+</div>
 
 <script src="./js/login.js"></script>
