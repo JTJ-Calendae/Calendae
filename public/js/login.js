@@ -2,19 +2,18 @@ const signUpRadio = document.querySelector('#signupradio');
 const logInRadio = document.querySelector('#loginradio');
 const signUpSection = document.querySelector('.signupsection');
 const logInSection = document.querySelector('.loginsection');
-if (logInRadio.checked = true) {
-    signUpSection.style.display = "none";
-    if (logInSection.style.display = "none") {
-        logInSection.style.display = "block";
-    }
-} 
 
-if (signUpRadio.checked = true) {
-    logInSection.style.display = "none";
-    if (signUpSection.style.display = "none") {
-        signUpSection.style.display = "block";
-    }
-} 
+const init = () => {
+  signUpRadio.addEventListener('click', () => {
+    logInSection.style.display = 'none'
+    signUpSection.style.display = 'block'
+    })
+  
+  logInRadio.addEventListener('click', () => {
+    signUpSection.style.display = 'none'
+    logInSection.style.display = 'block'
+    })
+}
 
 
 const signupFormHandler = async (event) => {
@@ -73,3 +72,5 @@ if (username && password) {
 
 document.querySelector('#submitsignup').addEventListener('click', signupFormHandler);
 document.querySelector('#submitlogin').addEventListener('click', loginFormHandler);
+
+init();
