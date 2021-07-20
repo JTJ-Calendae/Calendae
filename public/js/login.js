@@ -36,9 +36,9 @@ const signupFormHandler = async (event) => {
             headers: { 'Content-Type': 'application/json' },
         })
         if (response.ok) {
-            document.location.replace('/home');
+            document.location.replace('/weekview');
         } else {
-            alert("Sign up unsuccessful.");
+            alert("Incorrect password or invalid email.");
             console.log(response.statusText)
         }
     }
@@ -60,9 +60,9 @@ if (username && password) {
     });
 
     if (response.ok) {
-      document.location.replace('/home');
+      document.location.replace('/weekview');
     } else {
-        alert("Login unsuccessful.");
+        alert("Incorrect username or password.");
         console.log(response.statusText)    
     }
   }
