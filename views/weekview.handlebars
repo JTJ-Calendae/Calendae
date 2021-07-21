@@ -15,3 +15,59 @@
 
 </div>
 {{/each}}
+
+
+<div class="modal is-active">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Add your event!</p>
+      <button class="delete" aria-label="close"></button>
+    </header>
+    <section class="modal-card-body">
+      <div class="addEventForm">
+        <div class="field">
+          <div class="control">
+            <input class="input is-success" id = "addevent-name" type="text" placeholder="Enter a name for your event" value="">
+          </div>
+        </div>
+
+        <div class="field">
+          <div class="control">
+            <textarea class="textarea input is-success" id = "addevent-desc" type="text" placeholder="Add a description for your event" value=""></textarea>
+          </div>
+        </div>
+
+        <div class="field">
+          <div class="control">
+            <input class="is-success input" id="addevent-date" type="date" default>
+          </div>
+        </div>
+
+        <div class="field">
+          <div class="control">
+            <input class="input is-success" id = "addevent-time" type="time" placeholder="" value="">
+          </div>
+        </div>
+
+        <div class="field">
+          <div class="control">
+            <input class="input is-success" id = "password-signup" type="password" placeholder="Password" value="">
+          </div>
+        </div>
+
+        <div class="field">
+          <div class="control">
+            <input class="input is-success" id = "confirmPassword-signup" type="password" placeholder="Confirm password" value="">
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="modal-card-foot">
+      <button class="button is-success">Save changes</button>
+      <button class="button">Cancel</button>
+    </footer>
+  </div>
+</div>
+
+<script src="./js/events.js"></script>
