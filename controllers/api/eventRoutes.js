@@ -22,7 +22,7 @@ router.get('/:id', async (req, res) => {
           where: {
               id: req.params.id
           },
-        attributes: ['id', 'user_id', 'name', 'date', 'time', 'user_id', 
+        attributes: ['id', 'name', 'date', 'time', 'user_id', 
         'streetnumber', 'streetname', 'unitapt', 'city', 'state', 
         'zipcode', 'description'],
         include: [{
