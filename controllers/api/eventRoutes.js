@@ -1,10 +1,14 @@
 const router = require('express').Router();
 const { User, Event, Rsvp } = require('../../models');
+const auth = require('../utils/auth');
 
-// "Add event" in the Day view
-router.post('/', async (req, res) => {
+// "Add event" in the Week/Day view
+router.post('/', auth, async (req, res) => {
     try {
-      const createEvent = await Event.create(req.body);
+      const createEvent = await Event.create({
+        ...req.body,
+        user_id: req.session.user_id
+      });
       res.status(200).json(createEvent);
     }
     catch (err) {
