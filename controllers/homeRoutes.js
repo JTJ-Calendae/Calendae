@@ -31,9 +31,12 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.post('/', async (req, res) => {
+router.post('/', auth, async (req, res) => {
   try {
-    const createEvent = await Event.create(req.body);
+    const createEvent = await Event.create({
+      ...req.body,
+      user_id: req.session.user_id
+    });
     res.status(200).json(createEvent);
   }
   catch (err) {
