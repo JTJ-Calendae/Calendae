@@ -1,6 +1,6 @@
 const router = require('express').Router();
-const { User, Event } = require('../models');
-const auth = require('../utils/auth');
+const { User, Event, Rsvp } = require('../models');
+// const auth = require('../utils/auth');
 const emptydays = [{day: 'Monday'}, {day: 'Tuesday'}, {day: 'Wednesday'}, {day: 'Thursday'}, {day: 'Friday'}, {day: 'Saturday'}, {day: 'Sunday'}]
 
 router.get('/', async (req, res) => {
@@ -11,10 +11,11 @@ router.get('/', async (req, res) => {
   } else {
     try {
       const eventsData = await Event.findAll({
-        attributes: ['name', 'date', 'time', 'user_id']
+        attributes: ['id', 'name', 'date', 'time', 'user_id']
       })
       // map sequelize data into plain json
       const events = eventsData.map( (event) =>  event.get({ plain: true }));
+      console.log(events);
       req.session.save(() => {
         res.render('weekview', {
           events,
@@ -31,7 +32,11 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.post('/', auth, async (req, res) => {
+
+
+router.post('/', 
+// auth, 
+async (req, res) => {
   try {
     const createEvent = await Event.create({
       ...req.body,

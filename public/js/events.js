@@ -5,6 +5,18 @@ const closeModalBtn = document.querySelector('#closeModalBtn');
 const modal = document.querySelector('#modalHero');
 const addEventBtn = document.querySelector('#add-event');
 const createEventBtn = document.querySelector('#createEventBtn');
+const dayviewevent = document.getElementsByClassName('dayvieweventid');
+const dayviewsecond = document.querySelectorAll('.dayviewsecond');
+
+console.log(dayviewevent);
+const datavalues = [];
+
+for (const eventid of dayviewevent) {
+  console.log(eventid.dataset.value);
+  datavalues.push(eventid.dataset.value);
+}
+console.log('datavalues:', datavalues)
+
 
 const init = () => {
   addEventBtn.addEventListener('click', () => {
@@ -31,21 +43,45 @@ const addEventHandler = async (event) => {
   const state = document.querySelector('#addevent-state').value.trim();
   const zip = document.querySelector('#addevent-zip').value.trim();
 
+
   if (name && description && date && time) {
     const response = await fetch('/api/events', {
       method: 'POST',
-      body: JSON.stringify({ name, description, date, time }),
+      body: JSON.stringify({ name, description, date, time, address, unitapt, city, state, zip }),
       headers: { 'Content-Type': 'application/json' },
     });
     if (response.ok) {
       modal.classList.toggle('is-active');
-      return;
-    } else {
+      location.reload();
+      console.log('name:', name);
+      console.log('description:', description);
+      console.log('date:', date);
+      console.log('time:', time);
+      console.log('address:', address);
+      console.log('unitapt:', unitapt);
+      console.log('city:', city);
+      console.log('state:', state);
+      console.log('zip:', zip);
+      } else {
       alert("Error occured while adding event.");
       console.log(response.statusText)   
     }
   }
 }
+
+const viewEventHandler = async (event) => {
+  // does a GET route of the 1 event and renders HTML page of clicked event
+  event.preventDefault();
+  const response = await fetch (`/api/events/${datavalues[0]}`, {
+    method: 'GET',
+    headers: { 'Content-Type': 'application/json' },
+  });   
+  if (response.ok) {
+    document.location.replace(`/dayview/${datavalues[0]}`);
+
+  }}
+  
+// dayviewsecond.addEventListener('click', viewEventHandler);
 
 createEventBtn.addEventListener('click', addEventHandler);
 init();
