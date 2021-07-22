@@ -1,37 +1,33 @@
 {{> nav}}
-<div>
-<strong> Name: </strong> {{event.name}}
-</div>
+<div class="card">
 
-<div>
+<div class="card-header">
+<p class="title"> {{event.name}}</p>
+</div>
+<div class="card-content"></div>
+<div class="block">
 <strong>Description:</strong> {{event.description}}
 </div>
 
-<div>
+<div class="block">
 <strong>Event Date:</strong> {{event.date}}
 </div>
 
-<div>
+<div class="block">
 <strong>Event Time:</strong> {{event.time}}
 </div>
 
-<div>
+<div class="block">
 <strong>Created by:</strong> {{event.user_id}}
 </div>
 
-<div>
-<strong>Address:</strong> {{event.streetnumber}} {{event.streetname}} {{event.unitapt}}
+<div class="block">
+<strong>Address:</strong> {{event.streetnumber}} 
+{{event.streetname}} 
+{{event.unitapt}},
+{{event.city}},
+{{event.state}},
+{{event.zipcode}}
 </div>
-
-<div>
-<strong>City:</strong> {{event.city}}
 </div>
-
-<div>
-<strong>State:</strong> {{event.state}}
 </div>
-
-<div>
-<strong>Zip Code:</strong>  {{event.zipcode}}
-</div>
-

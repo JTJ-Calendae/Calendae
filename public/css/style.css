@@ -1,4 +1,7 @@
 /* Styling changes */
+.card-header { 
+  margin-top: 2%;
+}
 
 #add-event-txt {
   margin-left: 0.5rem;
