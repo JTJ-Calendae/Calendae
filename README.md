@@ -2,7 +2,7 @@
 
 ## Application Description:
 
-A simple social media application for planning events smarter
+A simple social media application for planning events smarter.
 
 ## User Story:
 AS A User,
@@ -10,35 +10,33 @@ I WANT to see a web application that allows me to schedule everyday events with 
 SO THAT I can create and see upcoming social events and who will be attending.
 
 ## Acceptance Criteria
-GIVEN I am planning an Event
-WHEN I click the Add Event button
-THEN a form will populate with fields allowing me to enter an Event with Details
-WHEN I click on a specific Event
-THEN I am presented with the event description, date, time, location, and attendees
-WHEN I return to the ‘Week View’
-THEN I am returned back to my calendar where I can view all upcoming events
+GIVEN I am planning an Event.
+WHEN I click the Add Event button.
+THEN a form will populate with fields allowing me to enter an Event with details.
+WHEN I click on a specific Event.
+THEN I am presented with the event description, date, time, and location.
+WHEN I return to the ‘Week View’.
+THEN I am returned back to my calendar where I can view all upcoming events.
 
 
 Screenshots:
 
 ### Wireframe
-<img src="./assets/images/Calendae-wireframe1" alt="screencap of Whimsical wireframes 1&2" />
+<img src="./assets/images/Calendae-wireframe1.png" alt="screencap of Whimsical wireframes 1&2" />
 
-<img src="./assets/images/Calendae-wireframe2" alt="screencap of Whimsical wireframes 3&4" />
+<img src="./assets/images/Calendae-wireframe2.png" alt="screencap of Whimsical wireframes 3&4" />
 
 ### ERD
-<img src="./assets/images/Calendae-ERD" alt="screencap of ERD Entity Relationship Diagram" />
+<img src="./assets/images/Calendae-ERD.png" alt="screencap of ERD Entity Relationship Diagram" />
 
 ### Deployed App
-<img src="./assets/images/Calendae-login" alt="screencap of Calendae log in page" />
+<img src="./assets/images/Calendae-login.png" alt="screencap of Calendae log in page" />
 
-<img src="./assets/images/Calendae-signup" alt="screencap of Calendae sign up page" />
+<img src="./assets/images/Calendae-signup.png" alt="screencap of Calendae sign up page" />
 
-<img src="./assets/images/Calendae-weekview" alt="screencap of Calendae weekview page" />
+<img src="./assets/images/Calendae-weekview.png" alt="screencap of Calendae weekview page" />
 
-<img src="./assets/images/Calendae-dayview" alt="screencap of Calendae dayview page" />
-
-<img src="./assets/images/Calendae-eventview" alt="screencap of Calendae eventview page" />
+<img src="./assets/images/Calendae-dayview.png" alt="screencap of Calendae dayview page" />
 
 
 ### Heroku deployed URL:

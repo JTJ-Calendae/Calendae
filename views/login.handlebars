@@ -1,7 +1,12 @@
-<h2>Welcome to Calendae</h2>
-<div class="container"> A simple social media for planning events smarter</div>
-
-<div class="control">
+<section class="hero is-dark is-fullheight is-fullwidth">
+  <div class="hero-body">
+<div class="container has-text-centered"> 
+<h1 class="block is-size-1" style="font-family: 'Martel', serif;">Welcome to Calendae</h1>
+<div class="block is-size-6">
+  A simple social media for planning events smarter
+</div>
+{{!-- <div class="control"> --}}
+  <div class="block">
   <label class="radio">
     <input type="radio" name="foobar" id="loginradio" checked>
     Log In
@@ -11,7 +16,12 @@
     Sign Up
   </label>
 </div>
+{{!-- </div> --}}
 <div class="signupsection" style="display: none;">
+  <div class="columns is-mobile">
+  <div class="column is-half is-offset-one-quarter">
+
+
   <div class="field">
     <div class="control">
       <input class="input is-success" id = "firstname-signup" type="text" placeholder="First Name" value="">
@@ -51,15 +61,21 @@
     </div>
   </div>
 
-
-  <div class="field is-grouped">
-    <div class="control">
-      <button class="button is-link" type="submit" id="submitsignup">Sign Up</button>
-    </div>
-  </div>
+ </div>
 </div>
 
+   <div class="columns is-mobile">
+  <div class="column is-half is-offset-one-quarter">
+
+  <div class="buttons" >
+    <button class="button is-link is-fullwidth is-medium" type="submit" id="submitsignup">Sign Up</button>
+  </div>
+</div>
+</div>
+</div>
 <div class="loginsection" style="display: block;">
+   <div class="columns is-mobile">
+  <div class="column is-half is-offset-one-quarter">
 <div class="field">
   <div class="control">
     <input class="input is-success" type="text" placeholder="Username" value="" id="username-login">
@@ -74,12 +90,20 @@
 </div>
 
 
-<div class="field is-grouped">
-  <div class="control" >
-    <button class="button is-link" type="submit" id="submitlogin">Log In</button>
+
+</div>
+</div>
+  <div class="columns is-mobile">
+  <div class="column is-half is-offset-one-quarter">
+
+  <div class="buttons" >
+    <button class="button is-link is-fullwidth is-medium" type="submit" id="submitlogin">Log In</button>
   </div>
 </div>
 </div>
 </div>
+</div>
+</div>
+</section>
 
 <script src="./js/login.js"></script>
