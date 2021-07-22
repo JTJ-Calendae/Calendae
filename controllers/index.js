@@ -6,10 +6,12 @@ const apiRoutes = require('./api');
 // this is to require the homeroutes file
 const landingRoutes = require('./landingRoutes');
 const homeRoutes = require('./homeRoutes');
+const dayRoutes = require('./dayRoutes')
 
 // this is directing the URL to the filepath or for the REST services (GET or POST routes)
 router.use('/', landingRoutes);
 router.use('/weekview', homeRoutes);
+router.use('/dayview', dayRoutes);
 router.use('/api', apiRoutes);
 
 module.exports = router;
