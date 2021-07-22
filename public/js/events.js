@@ -1,14 +1,77 @@
+// changes the value of the date to the current day when adding an event
 document.querySelector('#addevent-date').valueAsDate = new Date();
 
+let currentDay = new Date();
+let currentMonth = currentDay.getMonth();
+let currentYear = currentDay.getFullYear();
+let monthsArr = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+let selectedMonth = document.querySelector('#month');
+let selectedYear = document.querySelector('#year');
+let monthAndYear = document.querySelector('#monthandyear');
 const closeModal = document.querySelector('#closeModal');
 const closeModalBtn = document.querySelector('#closeModalBtn');
 const modal = document.querySelector('#modalHero');
 const addEventBtn = document.querySelector('#add-event');
 const createEventBtn = document.querySelector('#createEventBtn');
 const dayviewevent = document.getElementsByClassName('dayvieweventid');
-const dayviewsecond = document.querySelectorAll('.dayviewsecond');
 
-console.log(dayviewevent);
+const previousMonth = () => {
+  currentYear = (currentMonth === 11) ? currentYear + 1 : currentYear;
+  currentMonth = (currentMonth + 1) % 12;
+  makeCalendar(currentMonth, currentYear);
+}
+
+const nextMonth = () => {
+  currentYear = (currentMonth === 0) ? currentYear - 1 : currentYear;
+  currentMonth = (currentMonth === 0) ? 11 : currentMonth - 1;
+  makeCalendar(currentMonth, currentYear);
+}
+
+const jumpMonthYear = () => {
+  currentYear = parseInt(selectedYear.value);
+  currentMonth = parseInt(selectedMonth.value);
+  makeCalendar(currentMonth, currentYear);
+}
+
+const makeCalendar = (month, year) => {
+  let calendarBody = document.querySelector('#calendarbody');
+  let firstOfMonth = (new Date(year, month)).getDay();
+  let daysInMonth = 32 - new Date(year, month, 32).getDate();
+  //empty data from other months
+  calendarBody.innerHTML = "";
+  // enter data for non-table cell elements
+  monthAndYear.innerHTML = `${monthsArr[month]} ${year}`
+  selectedYear.value = year;
+  selectedMonth.value = month;
+  // create table cells
+  let date = 1;
+  for (i = 0; i < 6; i++) {
+    let tRow = document.createElement('tr');
+    for (d = 0; d < 7; d++) {
+      if (i === 0 && d < firstOfMonth) {
+        let tCell = document.createElement('td');
+        let tCellTxt = document.createTextNode('');
+        tCell.appendChild(tCellTxt);
+        tRow.appendChild(tCell);
+      } else if (date > daysInMonth) {
+        break;
+      } else {
+        let tCell = document.createElement('td');
+        let tCellTxt = document.createTextNode(date);
+        if (date === currentDay.getDate() && year === currentDay.getFullYear() && month === currentDay.getMonth()) {
+          // color today's date
+          tCell.classList.add('is-light', 'is-success');
+        }
+        tCell.appendChild(tCellTxt);
+        tRow.appendChild(tCell);
+        date++;
+      }
+    }
+    calendarBody.appendChild(tRow);
+  }
+}
+
 const datavalues = [];
 
 for (const eventid of dayviewevent) {
@@ -84,4 +147,5 @@ const viewEventHandler = async (event) => {
 // dayviewsecond.addEventListener('click', viewEventHandler);
 
 createEventBtn.addEventListener('click', addEventHandler);
+makeCalendar(currentMonth, currentYear);
 init();
