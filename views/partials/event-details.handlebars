@@ -1,12 +1,11 @@
-<section class="card">
+<section class="card" style="display: none;">
     <div class="card-content">
-      <div class="dayviewsecond">
       <a class="dayvieweventid" data-value='{{id}}' href="/dayview/{{id}}">
         <div class="card-header">
-         <p class="title"> {{name}}</p>
-          </div>
-        <p>{{date}}</p>
-        </a>
+          <p class="title eventtitle">{{name}}</p>
         </div>
-    </div> 
+        <p class="eventdate" data-value="{{name}}">{{date}}</p>
+        <p class="eventtime">{{format_time time}}</p>
+      </a>
+    </div>
 </section>

@@ -20,11 +20,15 @@ td {
 
 .table td.is-success, .table th.is-success {
   background-color: #f5f5f5;
-  border-color: #48c78e;
+  border-color: #03012C;
   color: rgba(0,0,0,.7);
 }
+table td:not([align]), table th:not([align]) {
+  text-align: left;
+  font-size: small;
+}
 .hero.is-dark .title {
-  color: #353839;
+  color: hsla(195, 4%, 22%, 0.8);
 }
 @media screen and (min-width: 350px) {
   .navbar-end {

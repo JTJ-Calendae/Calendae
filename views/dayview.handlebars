@@ -1,33 +1,106 @@
 {{> nav}}
-<div class="card">
 
-<div class="card-header">
-<p class="title"> {{event.name}}</p>
-</div>
-<div class="card-content"></div>
-<div class="block">
-<strong>Description:</strong> {{event.description}}
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      <p class="card-header-title is-size-4"> {{event.name}}</p>
+    </div>
+  <div class="card-content">
+    <div class="block">
+      <strong>Description:</strong> {{event.description}}
+    </div>
+
+    <div class="block">
+      <strong>Event Date:</strong> {{format_date event.date}}
+    </div>
+
+    <div class="block">
+      <strong>Event Time:</strong> {{format_time event.time}}
+    </div>
+
+    <div class="block">
+      <strong>Created by:</strong> {{event.user_id}}
+    </div>
+
+    <div class="block">
+    {{#if event.streetnumber}}
+    <strong>Address:</strong> {{event.streetnumber}} {{event.streetname}} {{event.unitapt}}, {{event.city}}, {{event.state}}, {{event.zipcode}}
+    </div>
+    {{/if}}
+  </div>
+  </div>
+  </div>
 </div>
 
-<div class="block">
-<strong>Event Date:</strong> {{event.date}}
+<div class="modal" id="modalHero">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Add your event!</p>
+      <button class="delete" id="closeModal" aria-label="close"></button>
+    </header>
+    <section class="modal-card-body">
+      <div class="addEventForm">
+        <div class="field">
+          <div class="control">
+            <input class="input is-success" id="addevent-name" type="text" placeholder="Enter a name for your event" value="">
+          </div>
+        </div>
+
+        <div class="field">
+          <div class="control">
+            <textarea class="textarea input is-success" id = "addevent-desc" type="text" placeholder="Add a description for your event" value=""></textarea>
+          </div>
+        </div>
+
+        <div class="field">
+          <div class="control">
+            <input class="is-success input" id="addevent-date" type="date" default>
+          </div>
+        </div>
+
+        <div class="field">
+          <div class="control">
+            <input class="input is-success" id="addevent-time" type="time" placeholder="" value="">
+          </div>
+        </div>
+
+        <div class="field">
+          <div class="control">
+            <input class="input is-success" id="addevent-address" type="text" placeholder="Add a location for your event (not required)" value="">
+          </div>
+        </div>
+
+        <div class="field">
+          <div class="control">
+            <input class="input is-success" id="addevent-address2" type="text" placeholder="Address line 2" value="">
+          </div>
+        </div>
+
+        <div class="field">
+          <div class="control">
+            <input class="input is-success" id="addevent-city" type="text" placeholder="City" value="">
+          </div>
+        </div>
+
+        <div class="field">
+          <div class="control">
+            <input class="input is-success" id="addevent-state" type="text" placeholder="State" value="">
+          </div>
+        </div>
+
+        <div class="field">
+          <div class="control">
+            <input class="input is-success" id="addevent-zip" type="text" placeholder="Zip Code" value="">
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="modal-card-foot">
+      <button class="button is-success" id="createEventBtn">Create Event</button>
+      <button class="button closeModal" id="closeModalBtn">Cancel</button>
+    </footer>
+  </div>
 </div>
 
-<div class="block">
-<strong>Event Time:</strong> {{event.time}}
-</div>
-
-<div class="block">
-<strong>Created by:</strong> {{event.user_id}}
-</div>
-
-<div class="block">
-<strong>Address:</strong> {{event.streetnumber}} 
-{{event.streetname}} 
-{{event.unitapt}},
-{{event.city}},
-{{event.state}},
-{{event.zipcode}}
-</div>
-</div>
-</div>
+<script src="../js/events.js"></script>
