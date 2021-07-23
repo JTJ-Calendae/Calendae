@@ -42,7 +42,7 @@ Screenshots:
 
 
 ### Heroku deployed URL:
-https://dashboard.heroku.com/apps/jtj-calendae
+https://tjj-calendae.herokuapp.com/
 
 ### GitHub URL:
 https://github.com/JTJ-Calendae/Calendae
